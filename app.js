@@ -8,6 +8,7 @@ const Athlete = require('./models/athlete');
 require('dotenv').config();
 // const port = 3000
 const userRoutes = require("./routes/users");
+const modeloRoutes = require("./routes/modelo");
 
 // Database conection
 const mongoose = require("mongoose");
@@ -22,6 +23,7 @@ main().catch((err) => console.log(err));
 // Middleware
 app.use(express.json());
 app.use('/users',userRoutes);
+app.use('/modelo',modeloRoutes)
 
 app.get('/athlete', async (req, res) => {
   try {
